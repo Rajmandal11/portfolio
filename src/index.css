@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-sans: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --accent-primary: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --accent-border: rgba(56, 189, 248, 0.35);
+    --accent-bg: rgba(56, 189, 248, 0.08);
+  }
+
+  body {
+    background-color: #030812;
+    color: #f1f5f9;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Typography & Light Blue Styling Utilities */
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-space-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom Slow Rotation for 3D Indicators */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 18s linear infinite;
+}
+
+/* Pulse Glow Keyframes */
+@keyframes cyanGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-cyan-glow {
+  animation: cyanGlow 5s ease-in-out infinite;
+}
+
+/* Glassmorphism Light Blue Dark Cards */
+.glass-panel {
+  background: rgba(6, 15, 28, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(10, 24, 42, 0.95);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Full Page Cyber Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+}
+
+.bg-radial-blue-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.12) 0%, rgba(3, 8, 18, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030812;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a2540;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
